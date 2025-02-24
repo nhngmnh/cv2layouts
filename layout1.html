@@ -11,7 +11,7 @@
     
     <div class="container wrapper">
       <div id="top">
-        <img src="./images/chandung.jpg"/>
+        <img id="avatar" src=""/>
         <div id="nameandschool">
             <h1>Nhữ Ngọc Minh</h1>
             <p>Khoa học máy tính<br/> Trường Công nghệ thông tin và truyền thông<br/>Đại học Bách Khoa Hà Nội</p></div>
@@ -28,9 +28,8 @@
       <div class="wrapper">
        <div id="menubar">
          <ul id="menulist">
-           <li class="menuitem" onclick="reStyle(0)">Stylesheet 1
-           </li><li class="menuitem" onclick="reStyle(1)">Stylesheet 2
-           </li><li class="menuitem" onclick="noStyles()">No Stylesheet
+           <li class="menuitem" onclick="">Stylesheet 1
+           </li><li class="menuitem" onclick="changeHTMLFile()">Stylesheet 2
          </li></ul>
          <div id="skills">
             Kỹ năng:
@@ -99,10 +98,18 @@
                 resultList.appendChild(listItem);
             });
         }
-    
+        function changeHTMLFile() {
+      window.location.href = "layout2.html"; 
+      }
+      function reloadImage(){
+            let img = document.querySelector('#avatar');
+            let random = Math.floor(Math.random() * 12) + 1;
+            img.src = `./images/${random}.jpg`;
+        }
         // Chạy khi trang tải xong
         window.onload = function() {
             renderResults();
+            reloadImage();
         };
     </script>
     

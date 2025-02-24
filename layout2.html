@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+    <ul id="menulist">
+        <li class="menuitem" onclick="changetoS1()">Stylesheet 1
+        </li><li class="menuitem" onclick="">Stylesheet 2
+      </li></ul>
     <div class="container">
        <div class="avatar">
-        <img src="https://i.pinimg.com/564x/eb/57/6f/eb576ff023487bcb1fa3ad61ee7b23ee.jpg" alt="">
+        <img src="" alt="">
        </div>
        <div class="name">
             <h1>Nhữ Ngọc Minh</h1>
@@ -59,8 +63,7 @@
             <div class="item">
                 <h4>Thành tích học tập</h4>
                 <div class="time">
-                   <span>GPA: 3.75</span><br/>
-                   <span>CPA: 3.78</span>
+                   
                 </div>
             </div>
             <h2 class="skills">
@@ -113,37 +116,69 @@
             <div class="des">
                 Dịch vụ quản lý các khoản thu của khách sạn.
                 <ul>
-                    <li>Lorem ipsum dolordolores.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, dolores.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur dolores.</li>
+                    <li>Công nghệ sử dụng: Java, SQL Server,...</li>
                 </ul>
             </div>
         </div>
 
         <div class="item">
-            <h4>Website shopping</h4>
+            <h4>Website giao diện CV</h4>
             <div class="time">
-                2020
+                2025
             </div>
             <div class="web">
-                www.lundevweb.com
+                <a href="https://nhungocminh-20225046.id.vn/">https://nhungocminh-20225046.id.vn/</a>
             </div>
             <div class="location">
-                Frond-end Developer
+                Frontend Developer
             </div>
             <div class="des">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur amet sed, est eum facilis repellendus 
-                atque perspiciatis iste porro nobis autem explicabo expedita fugiat nostrum. Eveniet eum autem culpa!
+                Giao diện tĩnh CV hồ sơ sinh viên cá nhân
                 <ul>
-                    <li>Lorem ipsum dolordolores.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, dolores.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur dolores.</li>
+                    <li>Công nghệ sử dụng: HTML, CSS, Javascript</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <h4>Website mồng 8/3</h4>
+            <div class="time">
+                2022
+            </div>
+            <div class="web">
+                <a href="https://lop12a1nam.wixsite.com/website-1">https://lop12a1nam.wixsite.com/website-1</a>
+            </div>
+            <div class="location">
+                Tools Developer
+            </div>
+            <div class="des">
+                Website chúc mừng ngày 8/3 
+                <ul>
+                    <li>Công nghệ sử dụng: Wix.com</li>
                 </ul>
             </div>
         </div>
        </div>
     </div>
-    
+    <script>
+        function randomCPAandGPA(){
+            let randomCPA = (Math.random() + 3).toFixed(2);
+            let randomGPA = (Math.random() + 3).toFixed(2);
+            let t= document.querySelector('.experience .item .time');
+            t.innerHTML = `CPA: ${randomCPA}, GPA: ${randomGPA}`;
+        }
+        function reloadImage(){
+            let img = document.querySelector('.avatar img');
+            let random = Math.floor(Math.random() * 12) + 1;
+            img.src = `./images/${random}.jpg`;
+        }
+        function changetoS1(){
+            window.location.href = "layout1.html"; 
+        }
+        window.onload = function() {
+            randomCPAandGPA();
+            reloadImage();
+        };
+    </script>
 </body>
 </html>
 

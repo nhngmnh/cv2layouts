@@ -1,9 +1,9 @@
 body{
-    background-color: #D5D5D5;
+    background-color: #b3d9f0;
     font-family: system-ui;
 }
 .container{
-    background-color: #E9E7EA;
+    background-color: #69c8ff;
     width:1000px;
     max-width: 100%;
     margin:auto;
@@ -14,7 +14,11 @@ body{
    column-gap: 5%; 
    row-gap: 30px;
 }
-
+@media (max-width:700px){
+    .container{
+        width: 550px;
+    }
+}
 .avatar img{
     width:200px;
     height:200px;
@@ -58,7 +62,7 @@ body{
 .name .contact li{
     padding:5px 0;
     transform: translate(-40px);
-    background-color: #E9E7EA;
+    background-color: #70afe6;
 }
 .info ul{
     padding: 0;
@@ -125,3 +129,25 @@ list-style: none;
 .des{
     margin-bottom: 10px;
 }
+
+#menulist {
+    padding: 10px !important;
+    height: auto;
+    width: 110px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    list-style: none;
+}
+.menuitem{
+    padding: 5px;
+    cursor: pointer !important;
+}
+.menuitem:hover{
+    background-color: #d5d5d5;
+}
+.menuitem:nth-child(2) {
+    background-color:#32a4e7;
+    color: white;
+    font-weight:bold;
+ }
+ 

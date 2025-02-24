@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="layout1.css">
+    
+    </head>
+    <body>
+    
+    <div class="container wrapper">
+      <div id="top">
+        <img src="./images/chandung.jpg"/>
+        <div id="nameandschool">
+            <h1>Nhữ Ngọc Minh</h1>
+            <p>Khoa học máy tính<br/> Trường Công nghệ thông tin và truyền thông<br/>Đại học Bách Khoa Hà Nội</p></div>
+        
+        <div id="moreIn4">
+            <p>Ngày sinh: 22/03/2004</p>
+            <p>Nơi sinh: Hưng Yên</p>
+            <p>Địa chỉ thường trú: Đỗ Mỹ- Bãi Sậy- Ân Thi- Hưng Yên</p>
+            <p>Nơi ở hiện tại: 67 đê Tô Hoàng, phường Cầu Dền</p>
+            <p>CPA: 3.78</p>
+            <p>Email cá nhân: nhungocminh2004@gmail.com</p>
+            <p>Github: <a id="github" href="https://github.com/nhngmnh">https://github.com/nhngmnh</a></p>
+        </div></div>
+      <div class="wrapper">
+       <div id="menubar">
+         <ul id="menulist">
+           <li class="menuitem" onclick="reStyle(0)">Stylesheet 1
+           </li><li class="menuitem" onclick="reStyle(1)">Stylesheet 2
+           </li><li class="menuitem" onclick="noStyles()">No Stylesheet
+         </li></ul>
+         <div id="skills">
+            Kỹ năng:
+            <li>Ngôn ngữ: C/C++, Java, Javascript, HTML, CSS,Python</li>
+            <li>Framework: React, ExpressJS</li>
+            <li>Database: SQL Server, MongoDB, MySQL</li>
+            <li>Lưu trữ: Git, Github</li>
+         </div>
+        </div>
+        <div id="main">
+          <h2>Dự án nổi bật</h2>
+          <div>
+          <h4>ODABS: Online Doctor Appointments Booking System
+          </h4>
+          <p>Mô tả: Dự án đặt lịch khám bác sĩ trực tuyến</p>
+          <p>Công nghệ sử dụng: HTML, Tailwind CSS, React, ExpressJS, MongoDB,...</p>
+          <a href="https://github.com/nhngmnh/ODABS">Đường link lưu trữ dự án</a>
+        </div>
+        <div>
+            <h4>BHS: Bluemoon Hotel Services
+            </h4>
+            <p>Mô tả: Dự án thu phí dịch vụ chung cư</p>
+            <p>Công nghệ sử dụng: Java, SQL Server,...</p>
+            <a href="https://github.com/imvietcuongfrvietnam/PRJ-NMCNPM-20241">Đường link lưu trữ dự án</a>
+          </div>
+       </div>
+        <div id="sidebar">
+            <h3 id="thanhtichhoctap">Thành tích học tập</h3>
+          <ul id="academicResults"></ul>
+            
+        </div>
+        <div id="sidebar2"></div>
+      </div>  
+      
+      
+      <div id="bottom">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+      </div>
+    </div> 
+    <script>
+        function getRandomGPA(min, max) {
+            return (Math.random() * (max - min) + min).toFixed(2);
+        }
+    
+        function generateAcademicResults() {
+            const results = [];
+            for (let i = 0; i <= 4; i++) {
+                const gpa = getRandomGPA(3, 4);
+                const drl=  Math.floor(Math.random() *51) + 50;
+
+                results.push({ ky: i, gpa: gpa, drl:drl });
+            }
+            return results;
+        }
+    
+        function renderResults() {
+            const results = generateAcademicResults();
+            const resultList = document.getElementById("academicResults");
+            resultList.innerHTML = "";
+    
+            results.forEach(result => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `Kỳ học 202${Math.floor(result.ky/3)+4}.${result.ky%2+1}: <br/>Điểm trung bình: ${result.gpa};<br/> Điểm rèn luyện: ${result.drl}`;
+                resultList.appendChild(listItem);
+            });
+        }
+    
+        // Chạy khi trang tải xong
+        window.onload = function() {
+            renderResults();
+        };
+    </script>
+    
+    </body>
+    
+</html>

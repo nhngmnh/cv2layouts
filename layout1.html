@@ -29,7 +29,8 @@
        <div id="menubar">
          <ul id="menulist">
            <li class="menuitem" onclick="">Stylesheet 1
-           </li><li class="menuitem" onclick="changeHTMLFile()">Stylesheet 2
+           </li><li class="menuitem" onclick="changeCSS(2)">Stylesheet 2
+            <li class="menuitem" onclick="changeHTMLFile(2)">Stylesheet 3</li>
          </li></ul>
          <div id="skills">
             Kỹ năng:
@@ -105,6 +106,10 @@
             let img = document.querySelector('#avatar');
             let random = Math.floor(Math.random() * 12) + 1;
             img.src = `./images/${random}.jpg`;
+        }
+        function changeCSS(i){
+          const link = document.querySelector('link[rel="stylesheet"]');
+            link.href = `layout${i}.css`;   
         }
         // Chạy khi trang tải xong
         window.onload = function() {

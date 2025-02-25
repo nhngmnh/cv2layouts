@@ -6,14 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="layout2.css">
+    <link rel="stylesheet" href="layout3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
     <ul id="menulist">
         <li class="menuitem" onclick="changetoS1()">Stylesheet 1
-        </li><li class="menuitem" onclick="">Stylesheet 2
-      </li></ul>
+        </li><li class="menuitem" onclick="changetoS2()">Stylesheet 2
+      </li>
+      <li class="menuitem" onclick="">Stylesheet 3
+    </li></ul>
     <div class="container">
        <div class="avatar">
         <img src="" alt="">
@@ -173,6 +175,9 @@
         }
         function changetoS1(){
             window.location.href = "layout1.html"; 
+        }
+        function changetoS2(){
+            window.location.href = "layout1.html?style=2";
         }
         window.onload = function() {
             randomCPAandGPA();
